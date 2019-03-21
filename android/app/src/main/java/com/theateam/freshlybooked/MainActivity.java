@@ -1,4 +1,4 @@
-package com.ateam.freshlybooked;
+package com.theateam.freshlybooked;
 
 import com.facebook.react.ReactActivity;
 

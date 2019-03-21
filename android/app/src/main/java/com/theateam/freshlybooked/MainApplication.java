@@ -1,4 +1,4 @@
-package com.ateam.freshlybooked;
+package com.theateam.freshlybooked;
 
 import android.annotation.SuppressLint;
 import android.app.Application;
