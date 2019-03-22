@@ -1,7 +1,10 @@
 import React from 'react';
 import { StyleSheet, Platform, Image, Text, View, ScrollView } from 'react-native';
+import fonts from './src/utils/fonts';
 
 import firebase from 'react-native-firebase';
+import DateTab from './src/components/DateTab';
+import DateTabContainer from "./src/components/DateTabContainer"
 
 export default class App extends React.Component {
   constructor() {
@@ -17,6 +20,10 @@ export default class App extends React.Component {
     // await firebase.analytics().logEvent('foo', { bar: '123'});
   }
 
+  makeCallToGetBookingsForDay = (dayString) => {
+    alert(`make call with ${dayString}`)
+  }
+
   render() {
     return (
         <View style={styles.container}>
@@ -25,6 +32,7 @@ export default class App extends React.Component {
                 style={[styles.logo]}
                 source={require('./assets/fbLogo.png')} 
                 resizeMode="contain"/>
+                <DateTabContainer requestBookings={ (dateString) => this.makeCallToGetBookingsForDay(dateString) } dates={["2019-03-18", "2019-03-19", "2019-03-20", "2019-03-21", "2019-03-22", "2019-03-23", "2019-03-24"]} />
         </View>
     );
   }
@@ -42,4 +50,16 @@ const styles = StyleSheet.create({
     height: 160,
     width: '80%',
   },
+  boldFont: {
+    marginLeft: 16,
+    marginTop:16,
+    fontFamily: fonts.SFProDisplayBold,
+    fontSize: 16
+  },
+  heavyFont: {
+    marginLeft: 16,
+    marginTop:16,
+    fontFamily: fonts.SFProDisplayHeavy,
+    fontSize: 16
+  }
 });
