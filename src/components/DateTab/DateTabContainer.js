@@ -1,7 +1,7 @@
 import React from 'react'
 import { StyleSheet, View, FlatList, Text, ActivityIndicator } from 'react-native'
 import DateTab from './DateTab';
-import colors from '../utils/colors';
+import colors from '../../utils/colors';
 
 class DateTabContainer extends React.Component {
     render() {

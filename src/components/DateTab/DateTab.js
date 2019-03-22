@@ -1,9 +1,9 @@
 import React from 'react'
 import { StyleSheet, View, TouchableOpacity, Text } from 'react-native'
-import colors from '../utils/colors';
-import fonts from '../utils/fonts';
-import getDateNumber from '../utils/dateHelper';
-import { getDateDay } from '../utils/dateHelper';
+import colors from '../../utils/colors';
+import fonts from '../../utils/fonts';
+import getDateNumber from '../../utils/dateHelper';
+import { getDateDay } from '../../utils/dateHelper';
 
 class DateTab extends React.Component {
 
