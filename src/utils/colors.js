@@ -4,7 +4,7 @@ const colors = {
     fbRed: "#FF0000",
     fbGrey: "#E6E6E6",
     fbBlack: "#000000",
-    
+    fbWhite: "#ffffff",
 }
 
 export default colors;
