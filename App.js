@@ -1,10 +1,17 @@
-import React from 'react';
-import { StyleSheet, Platform, Image, Text, View, ScrollView } from 'react-native';
-import fonts from './src/utils/fonts';
+import React from "react";
+import {
+  StyleSheet,
+  Platform,
+  Image,
+  Text,
+  View,
+  ScrollView
+} from "react-native";
+import bookings from "../freshly-booked/src/api/bookings";
 
-import firebase from 'react-native-firebase';
-import DateTab from './src/components/DateTab';
+import firebase from "react-native-firebase";
 import DateTabContainer from "./src/components/DateTabContainer"
+import fonts from './src/utils/fonts';
 
 export default class App extends React.Component {
   constructor() {
@@ -16,7 +23,6 @@ export default class App extends React.Component {
     // TODO: You: Do firebase things
     // const { user } = await firebase.auth().signInAnonymously();
     // console.warn('User -> ', user.toJSON());
-
     // await firebase.analytics().logEvent('foo', { bar: '123'});
   }
 
@@ -41,9 +47,9 @@ export default class App extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'flex-start',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
+    justifyContent: "flex-start",
+    alignItems: "center",
+    backgroundColor: "#F5FCFF",
     padding: 16
   },
   logo: {
