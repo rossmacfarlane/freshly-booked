@@ -1,5 +1,3 @@
-import React from 'react'
-
 export default function getDateNumber(dateString) {
     const date = new Date(dateString)
     return date.getDate()

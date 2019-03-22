@@ -34,6 +34,10 @@ export default class App extends React.Component {
     alert(`make call with ${dayString}`)
   }
 
+  nameForBookingEntered = (name) => {
+    alert(name)
+  }
+
   render() {
     return (
         <View style={styles.container}>
@@ -43,7 +47,7 @@ export default class App extends React.Component {
                 source={require('./assets/fbLogo.png')} 
                 resizeMode="contain"/>
                 <DateTabContainer requestBookings={ (dateString) => this.makeCallToGetBookingsForDay(dateString) } dates={["2019-03-18", "2019-03-19", "2019-03-20", "2019-03-21", "2019-03-22", "2019-03-23", "2019-03-24"]} />
-                <BookingPopUp time= { this.state.timeSelected } display = { this.state.display } />
+                <BookingPopUp time= { this.state.timeSelected } display = { this.state.display } nameEntered= {(name) => this.nameForBookingEntered(name)} />
         </View>
     );
   }

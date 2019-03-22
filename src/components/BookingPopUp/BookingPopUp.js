@@ -1,22 +1,34 @@
 import React from 'react'
 import { StyleSheet, View, Modal, Text, TextInput } from 'react-native'
-import colors from '../../utils/colors';
-import fonts from '../../utils/fonts';
-import CloseButton from '../ActionButton';
+import colors from '../../utils/colors'
+import fonts from '../../utils/fonts'
+import icons from '../../utils/icons'
+import ActionButton from '../ActionButton'
 
-const BookingPopUp = (props) => (
-    <Modal visible={ props.display } animationType = "slide" 
-           onRequestClose={ () => console.log('closed') } >
-      <View style={styles.container}>
-        <View style={styles.popUp}>
-            <Text style={styles.description}>What name should your { props.time } table be booked under?</Text>
-            <TextInput placeholder="ENTER NAME" onChangeText= {(text) => alert(`name is ${text}`)} />
-            {/*  */}
-            <ActionButton icon='../assets/img/cross.png' onClick={() => self.props.display = false} />
+const BookingPopUp = (props) => {
+    const { nameEntered } = props
+
+    state = {
+        name: ""
+    }
+
+    return (
+        <Modal visible={ props.display } animationType = "slide" 
+            onRequestClose={ () => console.log('closed') } >
+        <View style={styles.container}>
+            <View style={styles.popUp}>
+                <Text style={styles.description}>What name should your { props.time } table be booked under?</Text>
+                <TextInput style={styles.textBox} placeholder="ENTER NAME" onChangeText={(name) => state.name = name} />
+
+                <ActionButton layout={{top: -20, right: -20}} icon= { require("../../assets/img/cross.png") } />
+
+                <ActionButton layout={{bottom: -20, right: "40%"}} icon={ require("../../assets/img/tick.png") } onClick={() => nameEntered(state.name)} />
+
+            </View>
         </View>
-      </View>
-    </Modal>
-  )
+        </Modal>
+    )
+}
 const styles = StyleSheet.create({
     container: {
         width: "100%",
@@ -40,6 +52,12 @@ const styles = StyleSheet.create({
         fontSize: 20,
         textAlign: 'center'
     },
+    textBox: {
+        fontFamily: fonts.SFProDisplayBold,
+        fontSize: 20,
+        textAlign: 'center',
+        top: 30,
+    }
 })
 
 export default BookingPopUp
